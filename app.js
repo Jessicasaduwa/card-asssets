@@ -7,7 +7,7 @@ const monthInput = document.getElementById('card-month');
 const cardYear = document.getElementById('year');
 const yearInput = document.getElementById('card-year');
 const cardCvc = document.getElementById('cvc');
-const cvcInput = document.getElementById('cvc-input');
+const cvcInput = document.getElementById('card-cvc');
 
 function format(e) {
     //4 digit spacing?
