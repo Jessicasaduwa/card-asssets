@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>card form</title>
+  </head>
+  <body>
+  <main>
+    <div class="container">
+      <div class="left-section">
+        <div class="cards">
+          <div class="front-card">
+            <img src="/images/card-logo.svg" class="card-logo" alt="" />
+            
+            <div class="card-container">
+              <img src="/images/bg-card-front.png" alt="" />
+              <h1 id="number">0000 0000 0000 0000</h1>
+              <div class="card-info">
+                <span id="name">John James</span>
+                <span id="date">
+                  <span id="month">10</span>
+                  /
+                  <span id="year">25</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="back-card">
+            <img src="/images/bg-card-back.png" alt="" />
+            <span id="cvc">000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <form action="">
+          <div class="input-1">
+            <label for="card-name">cardholder name</label> <br>
+            <input
+             type="text"
+             placeholder="e.g John James" 
+             id="card-name" 
+             required>
+          </div>
+          <div class="input-2">
+            <label for="card-number">card number</label> <br>
+            <input
+             type="number"
+             placeholder="e.g 0000 0000 0000 0000"
+             oninput="if (this.value.length > this.maxLength) this.value=this.value.slice(0, this.maxLength)"
+             minlength="16"
+             maxlength="16"
+             id="card-number"
+             required>
+          </div>
+          <div class="card-information">
+            <div id="card-date">
+              <label for="card-date">Exp date(MM/YY)</label>
+              <div class="two-inputs">
+                <div>
+                  <input
+                   type="number"
+                   placeholder="MM"
+                   oninput="if (this.value.length > this.maxLength) this.value=this.value.slice(0, this.maxLength)"
+                   minlength="2"
+                   maxlength="2"
+                   id="card-month"
+                   required
+                  />
+                </div>
+                <div>
+                  <input
+                   type="number"
+                   placeholder="YY"
+                   oninput="if (this.value.length > this.maxLength) this.value=this.value.slice(0, this.maxLength)"
+                   minlength="2"
+                   maxlength="2"
+                   id="card-year"
+                   required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="input-4">
+              <label for="card-cvc">CVC</label>
+              <input
+               type="number" 
+               oninput="if (this.value.length > this.maxLength) this.value=this.value.slice(0, this.maxLength)"
+               maxlength="3"
+               placeholder="e.g. 123"
+               id="card-cvc"
+               required 
+               />
+            </div>
+          </div>
+          <button id="submit-btn" type="submit">Confirm</button>
+        </form>
+
+        <div class="thank hidden">
+          <img src="/images/icon-complete.svg" alt="" />
+          <h1>Thank You!</h1>
+          <p>We've added ypur card details</p>
+          <button>Continue</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="/app.js"></script>
+  </body>
+</html>
